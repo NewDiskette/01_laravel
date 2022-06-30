@@ -26,3 +26,5 @@ Route::get('/my_hobby', 'MyHobbyController@index');
 Route::get('/my_language', 'MyLanguageController@index');
 
 Route::get('/posts', 'PostController@index');
+
+Route::get('/posts/create', 'PostController@create');
