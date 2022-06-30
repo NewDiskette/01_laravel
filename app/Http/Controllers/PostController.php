@@ -9,14 +9,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        $post = Post::find(1);
-        dump($post);
-        dump($post->title);
-        dump($post->content);
-        dump($post->image);
-        dump($post->likes);
-        dump($post->is_published);
-        dump($post->created_at);
-        dd($post->updated_at);
+        $posts = Post::all();
+        foreach($posts as $post)
+            dump($post->title);
+
+        $posts_published = Post::where('is_published', 1)->get();
+        dump($posts_published);
+
+        $one_post_published = Post::where('is_published', 1)->first();
+        dump($one_post_published);
     }
 }
