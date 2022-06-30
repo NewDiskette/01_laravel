@@ -11,6 +11,12 @@ class PostController extends Controller
     {
         $post = Post::find(1);
         dump($post);
-        dd($post->title);
+        dump($post->title);
+        dump($post->content);
+        dump($post->image);
+        dump($post->likes);
+        dump($post->is_published);
+        dump($post->created_at);
+        dd($post->updated_at);
     }
 }
