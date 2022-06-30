@@ -24,3 +24,5 @@ Route::get('/page_centered', 'PageCenteredController@index');
 Route::get('/my_hobby', 'MyHobbyController@index');
 
 Route::get('/my_language', 'MyLanguageController@index');
+
+Route::get('/posts', 'PostController@index');
