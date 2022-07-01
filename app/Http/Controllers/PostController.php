@@ -41,7 +41,23 @@ class PostController extends Controller
 
         foreach($postsArr as $item)
             Post::create($item);
-            
+
         dd('created');
+    }
+
+    public function update()
+    {
+        $post = Post::find(8);
+
+        $post->update(
+            [
+                'title' => 'updated title of post from vsCode',
+                'content' => 'updated some interesting content',
+                'image' => 'updated_image.png',
+                'likes' => 30,
+            ],
+        );
+
+        dump('updated');
     }
 }
