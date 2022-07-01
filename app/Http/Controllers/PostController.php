@@ -78,4 +78,40 @@ class PostController extends Controller
 
         dump('restored');
     }
+
+    public function firstOrCreate()
+    {
+        $post = Post::firstOrCreate(
+            [
+                'title' => 'some title of post from vsCode',
+            ],
+            [
+                'title' => 'some title of post from vsCode',
+                'content' => 'some interesting content',
+                'image' => 'some_image.png',
+                'likes' => 500,
+                'is_published' => 1,
+            ]
+        );
+
+        dump($post->content);
+    }
+
+    public function updateOrCreate()
+    {
+        $post = Post::updateOrCreate(
+            [
+                'title' => 'some title of post from vsCode',
+            ],
+            [
+                'title' => 'some title of post from vsCode',
+                'content' => 'interesting content',
+                'image' => 'image.png',
+                'likes' => 300,
+                'is_published' => 1,
+            ]
+        );
+
+        dump($post->content);
+    }
 }
