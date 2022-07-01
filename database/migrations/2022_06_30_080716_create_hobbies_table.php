@@ -19,6 +19,8 @@ class CreateHobbiesTable extends Migration
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

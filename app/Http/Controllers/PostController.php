@@ -33,7 +33,7 @@ class PostController extends Controller
             [
                 'title' => 'another title of post from vsCode',
                 'content' => 'another some interesting content',
-                'image' => 'another image.png',
+                'image' => 'another_image.png',
                 'likes' => 50,
                 'is_published' => 1,
             ],
@@ -59,5 +59,23 @@ class PostController extends Controller
         );
 
         dump('updated');
+    }
+
+    public function delete()
+    {
+        $post = Post::find(2);
+
+        $post->delete();
+
+        dump('deleted');
+    }
+
+    public function restore()
+    {
+        $post = Post::withTrashed()->find(2);
+
+        $post->restore();
+
+        dump('restored');
     }
 }
