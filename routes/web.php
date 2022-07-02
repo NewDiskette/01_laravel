@@ -38,3 +38,5 @@ Route::get('/posts/restore', 'PostController@restore');
 Route::get('/posts/first_or_create', 'PostController@firstOrCreate');
 
 Route::get('/posts/update_or_create', 'PostController@updateOrCreate');
+
+Route::get('/posts/example', 'PostController@example');
